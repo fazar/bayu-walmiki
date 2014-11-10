@@ -1,0 +1,29 @@
+/* Empty. Add your own CSS if you like */
+
+ion-nav-view {
+    background-color: #e0e0e0;
+}
+
+.forgot-password-link {
+	text-align: center;
+	background: #ffffff;
+	margin: 0;
+ 	padding: 20px 0; 
+}
+
+.interest-item {
+	display: inline-block;
+	padding: 7px;
+	margin: 4px;
+	border: 1px solid #e0e0e0;
+}
+
+.chosen {
+	background-color: red;
+}
+
+.button-follow {
+	position: absolute;
+	top: 2px;
+	right: 20px
+}

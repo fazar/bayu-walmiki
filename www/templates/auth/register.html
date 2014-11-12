@@ -1,42 +1,69 @@
-<ion-content>
+<ion-content class="slide-under-header has-header">
   <div class='register'>
-    <form ng-submit="doLogin()">
+    <form novalidate="novalidate" on-valid-submit="doRegister()" type="POST" name="registerForm" >
       <div class="list">
-        <label class="item item-input">
+        <label class="item item-input validated">
           <span class="input-label">Email</span>
-          <input type="text" ng-model="loginData.username">
+          <input type="text" ng-model="register.email" name="register.email" ng-required="true" >          
         </label>
+        
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="text" ng-model="register.username" >
         </label>      
 
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="password" ng-model="register.password">
         </label>      
 
         <label class="item item-input">
           <span class="input-label">Full Name</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="text" ng-model="register.fullname">
         </label>      
 
         <label class="item item-input">
           <span class="input-label">Phone Number (Optional)</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="text" ng-model="register.phoneNumber">
         </label>      
         <div class="row">
           <div class="col">
             <button class="button button-block button-positive" ng-click="registerBack()">Back</button>
           </div>
           <div class="col">
-            <button class="button button-block button-positive" ng-click="registerNext()">Next</button>
+            <input type="submit" class="button button-block button-positive" value="sub"></input>
           </div>
         </div>
-        <!-- <label class="item">
-          <button class="button button-block button-positive" type="submit">Next</button>
-        </label> -->
       </div>
     </form>
   </div>
 </ion-content>
+
+
+<!-- <h2>Validation Example</h2>
+
+<form ng-app="" name="myForm" ng-submit="doRegister()">
+
+<p>Username:<br>
+<input type="text" name="user" ng-model="user" required>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span>
+</p>
+
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</p>
+
+<p>
+<input type="submit"
+ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid">
+</p>
+
+</form> -->
+

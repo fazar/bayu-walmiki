@@ -14,6 +14,16 @@ angular.module('lookats.controllers')
 		{username : 'putu', id:'4'}
 	];
 
+	$scope.user = {
+		username : 'therealdisastr',
+		fullname : 'Dian Sastro',
+		id : '1',
+		avatar : 'http://photos-d.ak.instagram.com/hphotos-ak-xpa1/923809_1566799786869227_1732260565_n.jpg',
+		about : 'Actress',
+		location : 'Indonesia',
+		interest : ['travel', 'philosophy']
+	}
+
 	$scope.addInterests = function(interest) {
 		if (!$scope.isChosen(interest)) {
 			interestsChosen.push(interest);	
@@ -39,4 +49,6 @@ angular.module('lookats.controllers')
 		console.log(interestsChosen);
 		$state.go('home.timeline');
 	}
+
+
 });

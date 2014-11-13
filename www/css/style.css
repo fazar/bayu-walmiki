@@ -73,8 +73,9 @@ form.ng-submitted select.ng-valid + i.icon.error {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0px;
-  width: 100%; }
+  /*padding: 0px;*/
+  width: 100%; 
+}
 
 .validated .input-label {
   -webkit-box-flex: 0;

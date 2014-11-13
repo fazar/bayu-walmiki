@@ -1,6 +1,7 @@
 angular.module('lookats.controllers')
 
-.controller('profileCtrl', function($scope, $stateParams, $ionicNavBarDelegate, $state) {
+.controller('profileCtrl', function($scope, $stateParams, $ionicNavBarDelegate, $state,
+									userService) {
 	var interests = ['beach', 'party', 'formal party', 'travel', 'carnaval', 'sports', 'football', 'library', 'music', 'jazz', 'movie', 'film', 'car', 'girlie','mainly'];
 	var interestsChosen = [];	
 		
@@ -14,7 +15,9 @@ angular.module('lookats.controllers')
 		{username : 'putu', id:'4'}
 	];
 
-	$scope.user = {
+	$scope.user = userService.getById(lookats.user.id);	
+	
+	/*$scope.user = {
 		username : 'therealdisastr',
 		fullname : 'Dian Sastro',
 		id : '1',
@@ -22,7 +25,7 @@ angular.module('lookats.controllers')
 		about : 'Actress',
 		location : 'Indonesia',
 		interest : ['travel', 'philosophy']
-	}
+	}*/
 
 	$scope.addInterests = function(interest) {
 		if (!$scope.isChosen(interest)) {

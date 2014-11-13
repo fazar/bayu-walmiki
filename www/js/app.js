@@ -4,10 +4,11 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('lookats', ['ionic', 'lookats.controllers', 'lookats.directives'])
+angular.module('lookats', ['ionic', 'lookats.controllers', 'lookats.directives', 'lookats.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -20,9 +21,11 @@ angular.module('lookats', ['ionic', 'lookats.controllers', 'lookats.directives']
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {  
+  $httpProvider.interceptors.push('authInterceptor');
+  
   $urlRouterProvider.otherwise('/auth/welcome')
-
+  
    $stateProvider
     /*.state('home', {
       url: '/',
@@ -31,15 +34,17 @@ angular.module('lookats', ['ionic', 'lookats.controllers', 'lookats.directives']
     .state('auth', {      
       abstract: true,
       url: '/auth',
-      templateUrl: 'templates/auth/layout.html'
+      templateUrl: 'templates/auth/layout.html'      
     })        
     .state('auth.welcome', {
       url:'/welcome',
-      templateUrl: "templates/welcome.html"
+      templateUrl: "templates/welcome.html",
+      controller: "homeCtrl"
     })
     .state('auth.login', {
       url: '/login',
-      templateUrl: "templates/auth/login.html"
+      templateUrl: "templates/auth/login.html",
+      controller:"authCtrl"
     })
     .state('auth.register', {
       url: '/register',

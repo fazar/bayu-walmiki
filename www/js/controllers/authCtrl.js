@@ -36,7 +36,6 @@ angular.module('lookats.controllers')
 		}*/
 
 	var login = function(username, password, isFromRegister) {
-		console.log(username + " - " + password);
 		var userData = {username : username, password : password};
 		$http.post(lookats.baseUrl + 'api/authenticate', userData)
 			.success( function( data, status, headers, config ) {

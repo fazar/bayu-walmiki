@@ -15,7 +15,7 @@ angular.module('lookats.controllers')
 		{username : 'putu', id:'4'}
 	];
 
-	$scope.user = userService.getById(lookats.user.id);	
+	$scope.user = userService.get();
 	
 	/*$scope.user = {
 		username : 'therealdisastr',

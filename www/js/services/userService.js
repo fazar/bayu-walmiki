@@ -1,7 +1,7 @@
 angular.module('lookats.services')
 	.factory('userService', ['$rootScope', '$state', '$window', '$http', function($rootScope, $state, $window, $http) {
 		return {
-			getById: function(id) {
+			get: function() {
 				var user = { username : '', fullname : '', followers : '', following : '' };
 
 				$http.get(lookats.baseUrl + 'api/user')

@@ -80,6 +80,10 @@ angular.module('lookats', ['ionic', 'lookats.controllers', 'lookats.directives',
       templateUrl: 'templates/home/timeline.html',
       controller:"homeCtrl"
     })  
+     .state('new-post', {
+      url: '/new-post',
+      templateUrl: 'templates/post/create.html'      
+     });
 
    
 
